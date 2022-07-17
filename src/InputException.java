@@ -1,8 +1,11 @@
-public class InputException extends RuntimeException{
-    public InputException() {
+public class InputException extends RuntimeException
+{
+    public InputException()
+    {
     }
 
-    public InputException(Messages message) {
+    public InputException(Messages message)
+    {
         super(message.toString());
     }
 }
