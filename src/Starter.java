@@ -6,4 +6,5 @@ public class Starter
     {
         new Menu().menu();
     }
+    // Добавил комент чисто проверить.
 }
