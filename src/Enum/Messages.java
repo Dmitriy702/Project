@@ -1,3 +1,5 @@
+package Enum;
+
 public enum Messages
 {
     COUNTRY_EXCEPTION("Неверное название страны!"),
@@ -6,14 +8,14 @@ public enum Messages
     HOUSE_EXCEPTION("Неверный номер дома!"),
     APARTMENT_EXCEPTION("Неверный номер квартиры!"),
     TEL_NUMBER_EXCEPTION("Неверный номер телефона!"),
-    EMAIL_EXCEPTION("Нверный email!"),
+    EMAIL_EXCEPTION("Неверный email!"),
     NAME_EXCEPTION("Неверное имя!"),
     SURNAME_EXCEPTION("Неверная фамилия!"),
     LASTNAME_EXCEPTION("Неверное отчество!"),
-    AGE_EXCEPTION("Неверный возрост!"),
-    BIRTHDAY_EXCEPTION("Неверная дата рждения!"),
+    AGE_EXCEPTION("Неверный возраст!"),
+    BIRTHDAY_EXCEPTION("Неверная дата рождения!"),
     SEX_EXCEPTION("Неверный пол!"),
-    BIRTHDAY_AGE_EXCEPTION("Возрост не соответствует дате рождения!"),
+    BIRTHDAY_AGE_EXCEPTION("Возраст не соответствует дате рождения!"),
     ID_EXCEPTION("Некорректный id!");
 
     private final String message;
