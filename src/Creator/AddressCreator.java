@@ -1,42 +1,30 @@
 package Creator;
 
 import Data.Address;
-import Util.InputData;
 import Enum.Messages;
+import Util.InputData;
 
 import java.util.HashSet;
 
-public class AddressCreator {
+public class AddressCreator
+{
     private final InputData inputData = new InputData();
     private final HashSet<Address> addresses = new HashSet<>();
 
-    private String country()
-    {
-        String country;
-
-        do {
-            System.out.println("Введите страну. Не более 20 символов.");
-            country = inputData.input();
-            if (!country.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$")){
-                System.out.println(Messages.COUNTRY_EXCEPTION);
-            }
-        }
-        while (!country.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$"));
-        return country;
-    }
 
     private String city()
     {
         String city;
 
-        do {
+        do
+        {
             System.out.println("Введите город. Не более 20 символов.");
             city = inputData.input();
-            if (!city.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$")){
+            if (!city.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$"))
+            {
                 System.out.println(Messages.CITY_EXCEPTION);
             }
-        }
-        while (!city.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$"));
+        } while (!city.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$"));
         return city;
     }
 
@@ -44,14 +32,15 @@ public class AddressCreator {
     {
         String street;
 
-        do {
+        do
+        {
             System.out.println("Введите улицу. Не более 20 символов.");
             street = inputData.input();
-            if (!street.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$")){
+            if (!street.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$"))
+            {
                 System.out.println(Messages.STREET_EXCEPTION);
             }
-        }
-        while (!street.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$"));
+        } while (!street.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$"));
         return street;
     }
 
@@ -59,14 +48,15 @@ public class AddressCreator {
     {
         String house;
 
-        do {
+        do
+        {
             System.out.println("Введите номер дома. Корпус, если есть, указывать через /");
             house = inputData.input();
-            if (!house.matches("^[1-9][0-9]{0,3}([a-zA-Z]|[а-яА-Я]|(/[1-9][0-9]?))?$")) {
+            if (!house.matches("^[1-9][0-9]{0,3}([a-zA-Z]|[а-яА-Я]|(/[1-9][0-9]?))?$"))
+            {
                 System.out.println(Messages.HOUSE_EXCEPTION);
             }
-        }
-        while (!house.matches("^[1-9][0-9]{0,3}([a-zA-Z]|[а-яА-Я]|(/[1-9][0-9]?))?$"));
+        } while (!house.matches("^[1-9][0-9]{0,3}([a-zA-Z]|[а-яА-Я]|(/[1-9][0-9]?))?$"));
         return house;
     }
 
@@ -74,15 +64,33 @@ public class AddressCreator {
     {
         String apartment;
 
-        do {
+        do
+        {
             System.out.println("Введите номер квартиры");
             apartment = inputData.input();
-            if (!apartment.matches("^[1-9][0-9]{0,3}([a-zA-Z]|[а-яА-Я])?$")) {
+            if (!apartment.matches("^[1-9][0-9]{0,3}([a-zA-Z]|[а-яА-Я])?$"))
+            {
                 System.out.println(Messages.APARTMENT_EXCEPTION);
             }
-        }
-        while (!apartment.matches("^[1-9][0-9]{0,3}([a-zA-Z]|[а-яА-Я])?$"));
+        } while (!apartment.matches("^[1-9][0-9]{0,3}([a-zA-Z]|[а-яА-Я])?$"));
         return apartment;
+    }
+
+
+    public HashSet<Address> createAddresses()
+    {
+        addresses.add(createAddress());
+        String answer;
+        System.out.println("Если хотите добавить новый адрес введите Y." + "\nЕсли хотите продолжить нажмите ввод");
+        answer = inputData.input();
+        while (answer.matches("[Yy]"))
+        {
+            addresses.add(createAddress());
+            System.out.println("Если хотите добавить новый адрес введите Y." + "\nЕсли хотите продолжить нажмите ввод");
+            answer = inputData.input();
+        }
+
+        return addresses;
     }
 
     private Address createAddress()
@@ -90,19 +98,19 @@ public class AddressCreator {
         return new Address(country(), city(), street(), house(), apartment());
     }
 
-    public HashSet<Address> createAddresses(){
-        addresses.add(createAddress());
-        String answer;
-        System.out.println("Если хотите добавить новый адрес введите Y." +
-                "\nЕсли хотите продолжить нажмите ввод");
-        answer = inputData.input();
-        while (answer.matches("[Yy]")){
-            addresses.add(createAddress());
-            System.out.println("Если хотите добавить новый адрес введите Y." +
-                    "\nЕсли хотите продолжить нажмите ввод");
-            answer = inputData.input();
-        }
+    private String country()
+    {
+        String country;
 
-        return addresses;
+        do
+        {
+            System.out.println("Введите страну. Не более 20 символов.");
+            country = inputData.input();
+            if (!country.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$"))
+            {
+                System.out.println(Messages.COUNTRY_EXCEPTION);
+            }
+        } while (!country.matches("^([a-zA-Z]|[а-яА-Я]){1,20}$"));
+        return country;
     }
 }
