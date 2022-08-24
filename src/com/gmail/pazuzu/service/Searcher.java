@@ -16,6 +16,7 @@ public class Searcher
     Set<Person> people;
     IMakeQuestion<String> question; // использую интерфейс идейка недовольна =(
 
+    // ты че, не видишь что идея жёлтым подсвечивает?)
     public Searcher(IMakeQuestion question)
     {
         this.line = new KeyboardLine();
@@ -23,16 +24,24 @@ public class Searcher
         this.question = question;
     }
 
+    // а здесь ты что возвращаешь
     List searchBySurName(String surname)
     {
         return people.stream().filter(person -> person.getSurname().equals(surname)).toList();
     }
 
+    // по какому числу? числу жен или волос на левом яичке?
     Person searchByNumber(List<Person> people, int number)
     {
         return people.get(number - 1);
     }
 
+    /*
+        Шта бля за название метода?
+        Мне кажется я тебе уже писал об этом, но если мне это показалось, то напоминаю,
+        что отсекать людей нужно не по айди, а по чем-то более человечном.
+        С рациональной точки зрения, однофамильцев родившихся в один день будет минимум.
+     */
     Person searchResultMake()
     {
         if (people.size() == 0)

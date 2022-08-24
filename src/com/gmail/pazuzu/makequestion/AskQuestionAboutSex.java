@@ -23,6 +23,16 @@ public class AskQuestionAboutSex implements IMakeQuestion<Sex>
             System.out.println(questionInfo.question);
             answer = line.input();
         }
+
+        /*
+            Вот это не красиво.
+            По сути, ты можешь сделать в классе Sex метод, который будет принимать
+            параметр m или f и возвращать нужное значение из себя.
+
+            return Sex.getByValue(answer);
+
+            Внутри метод реализуй через стрим. Если ничего не нашлось по дефолту возвращай UNKNOWN
+         */
         return switch (answer)
                 {
                     case "m" -> Sex.MAN;

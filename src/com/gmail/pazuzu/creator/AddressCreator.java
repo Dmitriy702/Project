@@ -10,9 +10,15 @@ import java.util.HashSet;
 
 public class AddressCreator
 {
+    // Давай к общему интерфейсу приведешь
     private final HashSet<Address> addresses;
+
     private final CreatorsUtil utils;
+
+    // ты че, не видишь что идея жёлтым подсвечивает?)
     private final IMakeQuestion questionYesOrNot;
+
+    // название переменной не соотносится с ее функциональностью
     private final QuestionsConstantsData info;
 
     public AddressCreator()
@@ -32,6 +38,7 @@ public class AddressCreator
         return addresses;
     }
 
+    // читая здесь utils не понятно о какой utils идет речь.
     private Address createAddress()
     {
         return new Address(utils.country(), utils.city(), utils.street(), utils.house(), utils.apartment());

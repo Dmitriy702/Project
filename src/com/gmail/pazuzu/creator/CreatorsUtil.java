@@ -11,11 +11,23 @@ import com.gmail.pazuzu.util.KeyboardLine;
 
 import java.time.LocalDate;
 
+/*
+    Вызовы методов сделал пакетного уровня доступа, а класс и конструктор публичные.
+    Так и должно быть?
+
+    Ну и + все что делает этот класс, это дергает нужных IMakeQuestion.
+    По факту, такую функциональность можно использовать не только для создания объектов.
+    Это я к тому, что классу не подходит его теперешнее название
+ */
 public class CreatorsUtil
 {
+    // ты че, не видишь что идея жёлтым подсвечивает?)
     private final IMakeQuestion question;
+    // ты че, не видишь что идея жёлтым подсвечивает?)
     private final IMakeQuestion questionAboutData;
+    // ты че, не видишь что идея жёлтым подсвечивает?)
     private final IMakeQuestion questionAboutSex;
+    // название переменной не соотносится с ее функциональностью
     private final QuestionsConstantsData info;
 
     public CreatorsUtil()

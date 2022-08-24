@@ -8,6 +8,8 @@ import java.time.LocalDate;
 public class AskQuestionAboutDate implements IMakeQuestion<LocalDate>
 {
     private final KeyboardLine line;
+
+    // название переменной какое-то странное. Почти как патиМейкер =). Назови просто дейтУтил
     private final DateUtil dataMaker;
 
     public AskQuestionAboutDate(KeyboardLine inputData, DateUtil dateMaker)

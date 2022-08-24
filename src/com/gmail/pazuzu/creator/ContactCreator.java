@@ -19,6 +19,7 @@ public class ContactCreator
         boolean notSkippedNumber = true;
         boolean notSkippedEMail = true;
         Contact contact = new Contact();
+        // пачиму не интерфейсного типа переменная?
         HashSet<String> numbers = new HashSet<>();
         numbers.add(utils.telNumberRequired());
         do

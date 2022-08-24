@@ -3,6 +3,9 @@ package com.gmail.pazuzu.data;
 import java.util.HashSet;
 import java.util.Set;
 
+/*
+    Плохое название класса.
+ */
 public class People
 {
     private final Set<Person> people;
@@ -22,6 +25,7 @@ public class People
         return INSTANCE;
     }
 
+    // Пачиму метод называется гет сет?
     public Set<Person> getSet()
     {
         return people;

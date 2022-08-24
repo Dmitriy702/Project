@@ -2,7 +2,8 @@ package com.gmail.pazuzu.makequestion;
 
 import com.gmail.pazuzu.enums.Messages;
 import com.gmail.pazuzu.enums.Regex;
-
+// Надо бы сделать все поля final раз это константы
+// да и как правило константы еще и статические обычно
 public class QuestionsConstantsData
 {
     public QuestionInfoConstant name = new QuestionInfoConstant(Regex.ONLY_20_LETTERS, "Введите имя", Messages.NAME_EXCEPTION);
